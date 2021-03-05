@@ -1,0 +1,2 @@
+# youtubeAPI_PHP
+PHPからYoutubeのAPIにアクセスして.jsonファイルに書き出しを行います。
