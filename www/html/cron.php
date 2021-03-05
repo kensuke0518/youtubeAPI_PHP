@@ -41,7 +41,7 @@
  */
 require_once (dirname(__FILE__) . '/vendor/autoload.php');
 //先ほど取得したAPIキーを定数にセットする
-const API_KEY = "AIzaSyD8ETI4HMaR5X1YvR2BMkPTgHjePpL9uHs";
+const API_KEY = process.env.MY_API_KEY;
 
 //認証を行う
 function getClient() 
