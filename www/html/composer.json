@@ -1,0 +1,6 @@
+{
+    "name": "morinagakensuke/you2php",
+    "require": {
+        "google/apiclient": "^2.9"
+    }
+}
