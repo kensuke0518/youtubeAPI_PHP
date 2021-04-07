@@ -16,6 +16,7 @@
  * PHPからAPIへの接続
  * http://challenge.no1s.biz/programming/php/381
  * Google App Script
+ * https://script.google.com/home
  * https://kijtra.com/article/cron-by-google-apps-script/
  * 
  * これを一旦コピペしてAPIキーとチャンネルIDを設定して、APIの認証のキーの制限をなしにしたらいけた。
