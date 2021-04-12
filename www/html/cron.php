@@ -93,24 +93,34 @@ foreach ($videos as $video) {
 //$arr = json_encode($videos);
 
 //test.jsonがあれば読み込む
-$url = 'test.json';
-$json = file_get_contents($url);
-
-if($json === false){
-    $arr = [$videos];
+$url = './youtubedata/ranking/test.json';
+$isJson = file_exists($url);
+function ccc($ddd, $eee){
+    $arr = [$eee];
     $arr = json_encode($arr);
-    file_put_contents("test.json" , $arr);
+    file_put_contents($ddd , $arr);
+}
+if($isJson === false){
+    ccc($url, $videos);
 }
 else{
+    $json = file_get_contents($url);
     $json = json_decode($json,true);
     $arr = $videos;
     array_unshift($json,$arr);
     $count = count($json);
-    if($count > 10){
-        array_pop($json);
+    if($count >= 8){
+        $date = date("Ymd");
+        rename($url,'./youtubedata/ranking/test'.$date.'.json');
+        ccc($url, $videos);
     }
-    $aaa = json_encode($json);
-    file_put_contents("test.json" , $aaa);
+    else{
+        $aaa = json_encode($json);
+        file_put_contents($url , $aaa);
+    }
+    /*if($count > 10){
+        array_pop($json);
+    }*/
 }
 
 
